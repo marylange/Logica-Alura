@@ -18,7 +18,7 @@
     var pesoInformado = prompt(nomeInformado + ", Informe seu peso.");
     var imcCalculado = calculaImc(alturaInformada, pesoInformado);
 
-    mostra(nomeInformado + ", o seu IMC é : " + imcCalculado);
+    mostra(nomeInformado + ", o seu IMC é : " + Math.round(imcCalculado));
     
     if(imcCalculado < 18.5) {
         mostra("Seu imc está abaixo do recomendado.");
