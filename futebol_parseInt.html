@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<script>
+
+function pulaLinha() {
+
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function mostra(frase) {
+
+    document.write(frase);
+    pulaLinha();
+}
+
+var vitorias = parseInt(prompt("Entre com o número de vitórias."));//adicionei a função parseInt. Quando for teclado número através do prompt, o java script conseguirá ler como número e não como strig. O programa até conseguia multiplicar o número de vitórias por 3, mas na hora de somar esse resultado com o número de empates, o que acontecia era uma concatenação. Usando o parseInt, o programa vai ler o número que será digitado.
+
+var empates = parseInt(prompt("Entre com o número de empates."));// A mesma coisa aqui.
+
+var pontos = (vitorias  * 3) + empates;
+
+mostra("Os pontos do seu time são " + pontos);
+
+//****Supondo que eu queira que meu programa faça um comparativo de pontos com relação ao ano passado.****
+
+//se(if) pontos maior(>) 28
+if(pontos > 28) {
+	mostra("Seu time está melhor do que no ano passado.");
+}
+//se(if) pontos menor(<) 28
+if(pontos < 28) {
+	mostra("Seu time está pior do que no ano passado.");
+}
+//se(if) pontos igual(==) 28
+if(pontos == 28) {
+	mostra("Seu time está igual ao ano passado.");
+}
+
+</script>

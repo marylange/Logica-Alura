@@ -1,0 +1,29 @@
+<meta charset = "UTF-8">
+
+<script>
+	function pulaLinha() {
+		document.write("<br><hr>");
+	}
+	function titulo(texto) {
+		document.write(texto);
+		pulaLinha();
+	}
+	function paragrafo(texto) {
+		document.write(texto);
+		pulaLinha();
+	}
+
+var diferencaIdadeFrancisco = 32 - 30
+var diferencaIdadeMauricio = 24 - 30
+var diferencaIdadeMaryanna = 20 - 30
+var mediaIdade = ((32 + 24 + 20 + 30) / 4);
+
+titulo("<h1>Nossa diferença de idade</h1>");
+
+paragrafo("<p>Tenho três irmãos, Francisco com 32, Maurício com 24 e Maryanna com 20.</p>");
+
+paragrafo("<p>A diferença de idade do Francisco e eu é de " + diferencaIdadeFrancisco + "." + " Já meu irmão Maurício, temos uma diferença de " + diferencaIdadeMauricio + "," + " e minha irmã casula, a Maryanna, tem uma diferença de " + diferencaIdadeMaryanna + ".</p>");
+paragrafo("<p>Portanto, a média das nossas idades é " + mediaIdade + ".</p>");
+
+
+</script>

@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function parenteses(texto) {
+        return "(" + texto + ")"
+    }
+
+    function arrobas(texto) {
+
+        return "@" + texto + "@";
+    }
+
+    //function juntaNomes(nome, sobrenome) {
+//
+  //      return parenteses(arrobas(nome + " " + sobrenome));
+//
+  //  }
+
+    function juntaNomes(nome, sobrenome) {
+        var nomeCompleto = nome + " " + sobrenome;
+        var nomeCompletoComArrobas = arrobas(nomeCompleto);
+        var nomeCompletoComArrobasEParenteses = parenteses(nomeCompletoComArrobas);
+        return nomeCompletoComArrobasEParenteses;
+    }
+
+    var resultado = juntaNomes("Flávio", "Almeida");
+
+    mostra(resultado);
+
+    //(@Flávio Almeida@)
+
+</script>
