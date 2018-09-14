@@ -1,0 +1,31 @@
+<meta charset = "UTF-8">
+
+<script>
+	
+function pulaLinha() {
+	document.write("<br><br>");
+}
+function mostra(texto) {
+	document.write(texto);
+	pulaLinha();
+} 
+
+ var numeroPensado = sorteia();
+
+    var chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
+
+    if(chute == numeroPensado) {
+
+        mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+    } else {
+
+        var contador = 1;
+
+        while( contador <= 10 ) {
+
+            mostra("Já era, você errou!");
+        }
+
+    }
+
+</script>

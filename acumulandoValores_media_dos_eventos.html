@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var totalDeEventos = parseInt(prompt("Informe o total de eventos"));
+
+    var contador = 1;
+    var totalGastoComEventos = 0;
+
+    while(contador <= totalDeEventos) {
+        //var totalGastoComEventos = 0; //Com essa variável dentro do while, toda vez que o programa passar por aqui, el vai zerar o totalGastosComEventos, contando a partir do que foi colocado depois em gastos.
+        var gasto = parseFloat(prompt("Informe total gasto com evento"));//A função parseFloat adimite números fracionados, como 1.2. No parseInt, ele transforma 1.2 em 1.
+        totalGastoComEventos = totalGastoComEventos + gasto;
+        contador++;
+    }
+
+    var media = totalGastoComEventos / totalDeEventos;
+
+    mostra("A média de gastos é " + Math.round(media));
+</script>

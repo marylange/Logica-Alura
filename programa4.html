@@ -1,0 +1,41 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio) {
+
+    	pincel.fillStyle = "blue";
+    	pincel.beginPath();
+    	pincel.arc(x, y, raio, 0, 2 * Math.PI);// Math.PI essa função substitue o 3.14 referente ao PI.
+   		pincel.fill();
+   	}
+
+   	function limpaTela() {
+
+   		pincel.clearRect(0, 0, 600, 400);
+   	}
+   	/*
+   	for(var x = 20; x < 600; x++) {
+		limpaTela();
+    	desenhaCirculo(x, 20, 10);
+   		}
+	*///O for permite que o processo do for seja muito rápido, por isso só enxergamos o resultado final.
+
+	// Temos que chamar um código num intervalo de tempo, vamso fazer assim:
+
+	var x = 20;
+
+	function atualizaTela() {
+			limpaTela();
+			desenhaCirculo(x, 20, 10);
+			x++;
+	}
+
+	setInterval(atualizaTela, 20);
+	
+</script>

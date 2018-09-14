@@ -13,11 +13,11 @@
         pulaLinha();
     }
 
-    var numeroPensado = Math.round(Math.random() * 100);
+    var numeroPensado = Math.round(Math.random() * 10);
     //O Math.round arredonda os números, e o Math.random gera números aleatórios no programa. É necessário multiplicar(*) por 10, onde anteriormente tínhamos um número 0.21, agora temos 2.1.
     //Um teste para decobrir so o usuário errou ou acertou mesmo pode ser feito. Basta escrever no código console.log(), colocando entre parenteses a variável var numeroPensado e ponto e vírgula ; após parenteses.
     console.log(numeroPensado);
-    var chute = parseInt(prompt("Digite um número de 0 a 100!"));
+    var chute = parseInt(prompt("Digite um número de 0 a 10!"));
 
     if(chute == numeroPensado) {
     	mostra("Você acertou!");

@@ -1,0 +1,89 @@
+<meta charset ="UTF-8">
+
+<input/>
+
+<button>Compare com meu segredo</button>
+
+
+<script>
+
+	// ***COMO USAR ARRAY PARA ARMAGENAR VÁRIOS DADOS NUMA ÚNICA VARIÁVEL.***
+	function sorteia(){//foi gerado uma função sorteia que retorna números aleatórios e inteiros.
+		return Math.round(Math.random() * 10);
+	}
+	function sorteiaNumeros(quantidade) {//Nessa segunda função ele sorteia a quantidade de números que entrará dentro da lista na variável segredos.
+
+	var segredos = [];//lista do array
+	var numero = 1;//O número que irá compor a lista partirá de um até três.
+	while(numero <= quantidade) {//enquanto 1 <= 2, isso será uma verdade e o programa de repetição continuará rodando. Quando chegar em 4, o programa vai ver se 1 <= 4, como isso é false o programa vai parar a repetição.
+		var numeroAleatorio = sorteia();
+
+		if(numeroAleatorio !== 0) {//Esse if impede que o programa selecione o numero zero para a lista de segredos.
+
+			var achou = false;
+			                      //posicao < 0 antes estava assim e por isso não gerava número aleatório.
+			for(var posicao = 0; posicao < segredos.length; posicao++) {// Esse for evita que os números apareçam repetidos.
+
+				if(segredos[posicao] == numeroAleatorio) {
+				achou = true;
+				break;
+				}
+			}
+
+			if(achou == false) {
+
+				segredos.push(numeroAleatorio);//a função push vai empurrar para dentro de segredos, tudo que foi gerado em sorteia através da multiplicação por 10.
+				numero++;//incremento da variável de incremento. Sempre será somado com +1 até o ciclo do while completar.
+				//O numero++ entrou pra esse bloco pq se ficar fora vai entrar na contagem de números aleatórios do if lá de cima.
+			}
+
+		}
+
+	}
+			
+	return segredos;
+
+	}
+	var segredos = sorteiaNumeros(4);
+
+	//segredos.push(Math.roud(Math.random() * 10);// Para não precisar fazer essa lista imensa de Math.round(Math.random() * 10);, eu posso criar uma função, que será chamada de sorteia e dentro dela colocar um return de Math.roud(Math.random() * 10);.
+	//segredos.push(Math.roud(Math.random() * 10);
+	//segredos.push(Math.roud(Math.random() * 10);
+	//segredos.push(Math.roud(Math.random() * 10);
+	//segredos.push(Math.roud(Math.random() * 10);
+	console.log(segredos);
+
+	var input = document.querySelector("input");
+	input.focus();//O formulário terá foco quando a página for carregada.
+
+	function verifica() {
+
+		var achou = false;
+		for(var posicao = 0; posicao < segredos.length; posicao++) { //length com isso ele pergunta pro array, que esta entre colchetes, o tamanho dele. Retorna a quantidade de elementos que ele tem.
+
+			if(input.value == segredos[posicao]) {
+
+			alert("Você acertou!");
+			var achou = true;
+			break; 	      	
+
+			} //else {
+				//alert("Você errou.");
+				//}
+			// Se esse else permanecer aqui, o programa vai exibir erro para todos os elementos da lista do array, e o que eu quero é que quando o programa varrer a lista inteira e não encontrar o elemento, ai sim ele deve exibir uma mensagem de erro. Se eu colocar somente o alert("Você errou.") depois do for, ele vai continuar exibindo mesmo acertando. Uma solução é declarar uma variável que será chamada de achou.
+		}
+
+		if(achou == false) { //Com essa variável achou == false, toda vez que ocorrer erro essa condição de achou == false será verdadeira, ai então o alert de erro será acionado.
+
+			alert("Você errou.");
+		}
+
+	input.focus();//O formulário terá foco quando a página for carregada (o cursor ficará piscando).
+	input.value = ""; // Apaga o valor deixando o espaço em branco.
+	}
+
+	var botao = document.querySelector("button");
+	botao.onclick = verifica;
+
+
+</script>

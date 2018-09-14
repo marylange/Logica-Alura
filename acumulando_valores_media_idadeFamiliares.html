@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<script>
+
+	//Quero criar um programa que consiga calcular a média de idade de qualquer família.
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var totalFamiliares = parseInt(prompt("Quantidade de familiares?")); // a primeira coisa é perguntar pro usuário a quantidade de familiares.
+    var numero = 1; //Essa é a variável de incremento, enquanto esse número for menor ou igual o totalFamiliares isso será verdadeiro(true) portanto a pergunta da var idade continuará sendo feita.
+    var totalIdades = 0;
+    while(numero <= totalFamiliares) {
+    //Na leitura do while, eu quero que enquanto ? for menor/igual ao totalFamiliares, a pergunta da variável idade seja feita para o usuário. Mas temos que definir a variável de incremento que é a ?. A partir de que número eu devo começar a fazer a pergunta.
+    	var idade = parseInt(prompt("Informa a idade do familiar")); //A segunda pergunta é para saber a idade de cada familiar. Se eu coloco na quantidade que tenho 3 familiares, o programa precisa me perguntar 3 vezes a idade do familiar. Para isso eu preciso gerar uma repetição com o while().
+    	totalIdades = totalIdades + idade;//a variável totalIdades vai acúmular as idades informadas na pergunta acima.
+    	numero++; //forma abreviada de numero = numero + 1, para incremento da variável incremento. 
+	}
+	var mediaIdades = totalIdades / totalFamiliares;// a variável mediaIdades vai dividir o acúmulado de totalIdades por totalFamiliares.
+
+	mostra("A média das idades dos familiares é " + mediaIdades);
+
+	mostra("FIM.");
+
+</script>

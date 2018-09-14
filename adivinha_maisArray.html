@@ -1,0 +1,47 @@
+<meta charset ="UTF-8">
+
+<input/>
+
+<button>Compare com meu segredo</button>
+
+
+<script>
+
+	// ***COMO USAR ARRAY PARA ARMAGENAR VÁRIOS DADOS NUMA ÚNICA VARIÁVEL.***
+
+	var segredos = [5,7,10,2,3];
+
+	var input = document.querySelector("input");
+	input.focus();//O formulário terá foco quando a página for carregada.
+
+	function verifica() {
+
+		var achou = false;
+		for(var posicao = 0; posicao < segredos.length; posicao++) { //length com isso ele pergunta pro array, que esta entre colchetes, o tamanho dele. Retorna a quantidade de elementos que ele tem.
+
+			if(input.value == segredos[posicao]) {
+
+			alert("Você acertou!");
+			var achou = true;
+			break; 	      	
+
+			} //else {
+				//alert("Você errou.");
+				//}
+			// Se esse else permanecer aqui, o programa vai exibir erro para todos os elementos da lista do array, e o que eu quero é que quando o programa varrer a lista inteira e não encontrar o elemento, ai sim ele deve exibir uma mensagem de erro. Se eu colocar somente o alert("Você errou.") depois do for, ele vai continuar exibindo mesmo acertando. Uma solução é declarar uma variável que será chamada de achou.
+		}
+
+		if(achou == false) { //Com essa variável achou == false, toda vez que ocorrer erro essa condição de achou == false será verdadeira, ai então o alert de erro será acionado.
+
+			alert("Você errou.");
+		}
+
+	input.focus();//O formulário terá foco quando a página for carregada (o cursor ficará piscando).
+	input.value = ""; // Apaga o valor deixando o espaço em branco.
+	}
+
+	var botao = document.querySelector("button");
+	botao.onclick = verifica;
+
+
+</script>

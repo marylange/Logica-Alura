@@ -1,0 +1,35 @@
+<canvas width = "600" height="400"></canvas>
+
+<script>
+	var tela = document.querySelector('canvas');//document.querySelector seleciona o parâmetro em html, que no caso é <canvas>.
+	var pincel = tela.getContext('2d');//getContext com esse função o programa retorna um contexto de desenho no canvas, ele pede um pincel para escrever em 2d.
+	
+	pincel.fillStyle = 'lightGrey';
+	pincel.fillRect(0, 	0, 600, 400); //O fill.Rect() é uma função que irá demarcar e preencher o retângulo que eu quero construir. Dentro do paranteses eu coloco o ponto de partida e até onde quero chegar. Com base no plano cartesiano, vamos traçar uma linha do eixo x(largura) e ou eixo y(altura). Elas vão partir do mesmo ponto que é zero, até onde quero chegar que é 600 de largura e 400 de altura. O resultado no navegador é quandro com preenchimento preto.
+
+	//pincel.fillStyle = 'ligthGray';
+	//fillStyle não é uma função, ela recebe atributos assim como as variáveis. Ela não pode permanecer depois da função fillRect porque o resultado no navegador ainda será tela preta. Devemos coloca-la antes, que ai ela vai está dizendo a cor antes mesmo de pintar.
+	
+	pincel.fillStyle = "green";
+	pincel.fillRect(0,0,200,400);
+
+	pincel.fillStyle = "red";
+	pincel.fillRect(400,0,200,400);
+
+	pincel.fillStyle = "yellow"; //A cor que preencherá o desenho.
+	pincel.beginPath(); //pertence a função pincel que inicia a escrita do caminho.
+	pincel.moveTo(300, 200);//função que ordena o movimento para fazer o desenho.
+	pincel.lineTo(200, 400);
+	pincel.lineTo(400, 400);
+	pincel.lineTo(200, 0);
+	pincel.lineTo(400, 0);
+	pincel.fill();
+
+
+	pincel.fillStyle = "blue"; //A cor que preencherá o desenho.
+	pincel.beginPath();
+	pincel.arc(300, 200, 50, 0, 2 * 3.14);//Para desenhar o circulo, é preciso saber as coordenadas de x e y pra saber onde o circulo vai ficar no desenho. Depois vamos especificar seu tamanho, o raio de circulo, que aqui será 50. Agora o ângulo inicial que é zero e o ângulo final em radianos.
+	pincel.fill();
+	
+
+</script>

@@ -1,0 +1,24 @@
+<canvas width="600"  height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculos(evento) {//O parâmetro evento, que pode ser qualquer outro nome, permite que possamos identificar a posição exato do click na tela exibido pelo consolo.log que também recebeu o parâmetro.
+    	var x = evento.pageX - tela.offsetLeft;// (- tela.offsetLeft) Esse argumento foi colocado para que o programa deixe de contar com a borda lateral no eixo y, fora do canvas no navegador.
+    	var y = evento.pageY - tela.offsetTop;// (- tela.offsetTop) Esse argumento foi colocado para que o programa deixe de contar com a borda de cima no eixo x, fora do canvas no navegador.
+    	pincel.fillStyle = "blue";
+    	pincel.beginPath();
+    	pincel.arc(x, y, 10, 0, 2*3.14);
+    	pincel.fill();
+
+    	console.log("posição do clique : " + x + ", " + y);
+
+    }
+
+   	tela.onclick = desenhaCirculos; //Não podemos usar os parenteses nesse momento pq a função seria executada automáticamente, seria exibido o alerta na tela. Nossa intensão é que o alerta seja exibido ao clicar na tela.
+
+</script>
